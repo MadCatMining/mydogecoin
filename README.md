@@ -1,4 +1,5 @@
 <h1 align="center">
+<img src="https://mydogecoin.fun/public/images/mydoge-200x200.png" width="200" alt="Mydogecoin Logo"><br>
 Mydogecoin Core [MYDOGE]  
 </h1>
 
