@@ -36,7 +36,7 @@ about Mydogecoin, give or ask for help, to share your project.
 
 Here are some places to visit:
 
-* [Discord](https://discord.gg/JQFCTDyw3G)
+* [Discord](https://discord.gg/35N6QS9fGe)
 * [Mydogecoin Twitter](https://x.com/mydogecoin_fun)
 
 ## License - Much license ⚖️
