@@ -1,5 +1,4 @@
 <h1 align="center">
-<img src="https://mydogecoin.fun/public/images/mydoge-256x256.png" width="256" alt="Mydogecoin Logo"><br>
 Mydogecoin Core [MYDOGE]  
 </h1>
 
@@ -37,7 +36,7 @@ about Mydogecoin, give or ask for help, to share your project.
 
 Here are some places to visit:
 
-* [Discord](https://discord.gg/35N6QS9fGe)
+* [Discord](https://discord.gg/JQFCTDyw3G)
 * [Mydogecoin Twitter](https://x.com/mydogecoin_fun)
 
 ## License - Much license ⚖️

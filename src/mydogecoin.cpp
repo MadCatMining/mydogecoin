@@ -131,7 +131,7 @@ CAmount GetDogecoinBlockSubsidy(int nHeight, const Consensus::Params& consensusP
     if (nHeight == 1) {
         return gprevalues * COIN;
     } else if (nHeight >= 2) {
-        return 5 * COIN;
+        return 2.5 * COIN;
     }
 
     int halvings = 0;
