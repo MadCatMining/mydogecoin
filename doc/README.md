@@ -1,4 +1,4 @@
-Mydogecoin Core 0.14.2
+Mydogecoin Core 1.14.9.2
 =====================
 
 Development
