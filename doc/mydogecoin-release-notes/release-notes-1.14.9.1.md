@@ -1,8 +1,9 @@
-Mydogecoin Core version 1.14.9.2 is now available from:
+Mydogecoin Core version 1.14.9.1 is now available from:
 
   <https://github.com/mydogecoin-project/mydogecoin>
 
-Fixed chain halt with fast, efficient mining optimization, improved network stability, enhanced consensus security, and secure, reliable transaction processing system.
+This is a new minor version release that contains important bugfixes. Mydogecoin
+users on any platform are strongly recommended to upgrade.
 
 Compatibility
 ==============
