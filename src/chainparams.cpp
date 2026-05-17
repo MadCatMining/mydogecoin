@@ -52,7 +52,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-    const char* pszTimestamp = "Ecology and environment involve nature.";
+    const char* pszTimestamp = "Ecology and environment involve nature II.";
     const CScript genesisOutputScript = CScript() << ParseHex("04fa2ddbb17262752078426c51f472db88a6f0502b0fd44628fe1817ea6557696ee5680577705090330d280dbdfbac679312870293bc600e5bebc06147f08b9fe1") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
@@ -82,10 +82,10 @@ public:
         //consensus.nMajorityRejectBlockOutdated = 1900;
         //consensus.nMajorityWindow = 2000;
         // BIP34 is never enforced in Mydogecoin v2 blocks, so we enforce from v3
-        consensus.BIP34Height = 3;
-        consensus.BIP34Hash = uint256S("0xb55baf5fa21d06720443f4f42384ecf114405acc2841fa3d73599a8cac852511");
-        consensus.BIP65Height = 3 ; 
-        consensus.BIP66Height = 3; 
+        //consensus.BIP34Height = 3;
+        //consensus.BIP34Hash = uint256S("0xb55baf5fa21d06720443f4f42384ecf114405acc2841fa3d73599a8cac852511");
+        //consensus.BIP65Height = 3 ; 
+        //consensus.BIP66Height = 3; 
         consensus.powLimit = uint256S("0x00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 20;
         consensus.nPowTargetTimespan = 1 * 60 * 60; // pre-digishield: 4 hours
         consensus.nPowTargetSpacing = 60; // 1 minute
@@ -112,10 +112,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 0; // Disabled
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000521d20"); // 
+        consensus.nMinimumChainWork = uint256S("0x"); // 
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x0a783992615b5d28b240b09f7ad77f06c0b906fc1c4b1735da7f271adb1f4f30"); // 
+        consensus.defaultAssumeValid = uint256S("0x"); // 
 
         // AuxPoW parameters
         consensus.nAuxpowChainId = 0x01A1; // 417
@@ -152,13 +152,13 @@ public:
         nDefaultPort = 22777;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1768616401, 384346, 0x1e0ffff0, 1, 5 * COIN);
+        genesis = CreateGenesisBlock(1768616401, 848411, 0x1e0ffff0, 1, 5 * COIN);
 
         consensus.hashGenesisBlock = genesis.GetHash();
         digishieldConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
         auxpowConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
-        assert(consensus.hashGenesisBlock == uint256S("0xcf28fd62d67c439d67d4c0150c5d7bb5067520279d6b13246e375cbe435878fa"));
-        assert(genesis.hashMerkleRoot == uint256S("0xb8033aecb53a928c673df50bafb3571d7b4ed71fc097fa659ecb5b3857701d9b"));
+        assert(consensus.hashGenesisBlock == uint256S("0xccdb9533d14a8280345b862cab4e03c6323ab7e11a631f3985b17580fb22e5e8"));
+        assert(genesis.hashMerkleRoot == uint256S("0xa46f7ef352449e97b6dcc307102d423476e2870615e1739d75851894155df3bc"));
 
         // Note that of those with the service bits flag, most only support a subset of possible options
         vSeeds.push_back(CDNSSeedData("mydogecoin.fun", "seed01.mydogecoin.fun", true));
@@ -182,8 +182,8 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            (      3, uint256S("0x1665618da7d579790caf04d1084684676149c0f3592235b65a31f9d74d2007b0"))
-            (      4, uint256S("0x0a783992615b5d28b240b09f7ad77f06c0b906fc1c4b1735da7f271adb1f4f30"))
+            (      0, uint256S("0xccdb9533d14a8280345b862cab4e03c6323ab7e11a631f3985b17580fb22e5e8"))
+            //(      4, uint256S("0x0a783992615b5d28b240b09f7ad77f06c0b906fc1c4b1735da7f271adb1f4f30"))
         };
 
         chainTxData = ChainTxData{
@@ -213,7 +213,7 @@ public:
 
         // Blocks 0 - 144999 are pre-Digishield
         consensus.nHeightEffective = 0;
-        consensus.nPowTargetTimespan = 4 * 60 * 60; // pre-digishield: 4 hours
+        consensus.nPowTargetTimespan = 1 * 60 * 60; // pre-digishield: 4 hours
         consensus.fDigishieldDifficultyCalculation = false;
         consensus.nCoinbaseMaturity = 30;
         consensus.fPowAllowMinDifficultyBlocks = true;
@@ -294,13 +294,13 @@ public:
         nDefaultPort = 44556;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1768619138, 90658, 0x1e0ffff0, 1, 5 * COIN);
+        genesis = CreateGenesisBlock(1768619138, 613251, 0x1e0ffff0, 1, 5 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         digishieldConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
         minDifficultyConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
         auxpowConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
-        assert(consensus.hashGenesisBlock == uint256S("0x09a9a482eef372bf024ff8f2febce3691851e0ef5b47f60df6e79737514807ed"));
-        assert(genesis.hashMerkleRoot == uint256S("0xb8033aecb53a928c673df50bafb3571d7b4ed71fc097fa659ecb5b3857701d9b"));
+        assert(consensus.hashGenesisBlock == uint256S("0x244b926cb1ba050223b8a3fb358a0a389fbdf9f612d810710371ec6bc86b2e35"));
+        assert(genesis.hashMerkleRoot == uint256S("0xa46f7ef352449e97b6dcc307102d423476e2870615e1739d75851894155df3bc"));
 
         vSeeds.clear();
         // nodes with support for servicebits filtering should be at the top
@@ -322,7 +322,7 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            ( 0, uint256S("0x09a9a482eef372bf024ff8f2febce3691851e0ef5b47f60df6e79737514807ed"))
+            ( 0, uint256S("0x244b926cb1ba050223b8a3fb358a0a389fbdf9f612d810710371ec6bc86b2e35"))
         };
 
         chainTxData = ChainTxData{
@@ -412,8 +412,8 @@ public:
         consensus.hashGenesisBlock = genesis.GetHash();
         digishieldConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
         auxpowConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
-        assert(consensus.hashGenesisBlock == uint256S("0xe9656a1d0c36604c2662a5e7f4f23fa7939271d7c487518771bf15b2ef4db63e"));
-        assert(genesis.hashMerkleRoot == uint256S("0xb8033aecb53a928c673df50bafb3571d7b4ed71fc097fa659ecb5b3857701d9b"));
+        assert(consensus.hashGenesisBlock == uint256S("0x35ec70073c47628ed00cee9d29a7cc643efafe8a56cd65205db62d1b55b63d0f"));
+        assert(genesis.hashMerkleRoot == uint256S("0xa46f7ef352449e97b6dcc307102d423476e2870615e1739d75851894155df3bc"));
 
         vFixedSeeds.clear(); //!< Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();      //!< Regtest mode doesn't have any DNS seeds.
@@ -425,7 +425,7 @@ public:
 
         checkpointData = (CCheckpointData){
             boost::assign::map_list_of
-            ( 0, uint256S("0xe9656a1d0c36604c2662a5e7f4f23fa7939271d7c487518771bf15b2ef4db63e"))
+            ( 0, uint256S("0x35ec70073c47628ed00cee9d29a7cc643efafe8a56cd65205db62d1b55b63d0f"))
         };
 
         chainTxData = ChainTxData{
