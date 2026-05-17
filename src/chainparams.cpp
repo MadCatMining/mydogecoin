@@ -123,7 +123,6 @@ public:
         consensus.fAllowLegacyBlocks = true;
         consensus.nHeightEffective = 0;
 
- 
         digishieldConsensus = consensus;
         digishieldConsensus.nHeightEffective = 1;
         digishieldConsensus.fSimplifiedRewards = false;
