@@ -126,7 +126,7 @@ public:
  
         digishieldConsensus = consensus;
         digishieldConsensus.nHeightEffective = 1;
-        //digishieldConsensus.fSimplifiedRewards = false;
+        digishieldConsensus.fSimplifiedRewards = false;
         digishieldConsensus.fDigishieldDifficultyCalculation = true;
         digishieldConsensus.nPowTargetTimespan = 60; // post-digishield: 1 minute
         digishieldConsensus.nCoinbaseMaturity = 90;
