@@ -82,10 +82,10 @@ public:
         //consensus.nMajorityRejectBlockOutdated = 1900;
         //consensus.nMajorityWindow = 2000;
         // BIP34 is never enforced in Mydogecoin v2 blocks, so we enforce from v3
-        //consensus.BIP34Height = 3;
-        //consensus.BIP34Hash = uint256S("0xb55baf5fa21d06720443f4f42384ecf114405acc2841fa3d73599a8cac852511");
-        //consensus.BIP65Height = 3 ; 
-        //consensus.BIP66Height = 3; 
+        consensus.BIP34Height = 3;
+        consensus.BIP34Hash = uint256S("0x2c654d792c8f19ee9ea6ec780e17d556cc1bcc023c4de9081ee10683556b325d");
+        consensus.BIP65Height = 3 ; 
+        consensus.BIP66Height = 3; 
         consensus.powLimit = uint256S("0x00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 20;
         consensus.nPowTargetTimespan = 1 * 60 * 60; // pre-digishield: 4 hours
         consensus.nPowTargetSpacing = 60; // 1 minute
@@ -112,10 +112,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 0; // Disabled
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x"); // 
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000621d21"); // 
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x"); // 
+        consensus.defaultAssumeValid = uint256S("0x1756da0993363b3bff999e0f2a4b504387501e3b6a3b8d8cb2ebb60a6b048ef3"); // 
 
         // AuxPoW parameters
         consensus.nAuxpowChainId = 0x01A1; // 417
@@ -182,8 +182,9 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            (      0, uint256S("0xccdb9533d14a8280345b862cab4e03c6323ab7e11a631f3985b17580fb22e5e8"))
-            //(      4, uint256S("0x0a783992615b5d28b240b09f7ad77f06c0b906fc1c4b1735da7f271adb1f4f30"))
+            (      3, uint256S("0x2c654d792c8f19ee9ea6ec780e17d556cc1bcc023c4de9081ee10683556b325d"))
+            (      4, uint256S("0x4a29d15a822174ddd1bcb55de9e8a5f0d30368d7687299f5f6bb2384050f6038"))
+            (      5, uint256S("0x1756da0993363b3bff999e0f2a4b504387501e3b6a3b8d8cb2ebb60a6b048ef3"))
         };
 
         chainTxData = ChainTxData{
