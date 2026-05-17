@@ -87,7 +87,7 @@ public:
         consensus.BIP65Height = 3 ; 
         consensus.BIP66Height = 3; 
         consensus.powLimit = uint256S("0x00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 20;
-        consensus.nPowTargetTimespan = 4 * 60 * 60; // pre-digishield: 4 hours
+        consensus.nPowTargetTimespan = 1 * 60 * 60; // pre-digishield: 4 hours
         consensus.nPowTargetSpacing = 60; // 1 minute
         consensus.fDigishieldDifficultyCalculation = false;
         consensus.nCoinbaseMaturity = 30;
@@ -123,15 +123,15 @@ public:
         consensus.fAllowLegacyBlocks = true;
         consensus.nHeightEffective = 0;
 
-        // Blocks 145000 - 371336 are Digishield without AuxPoW
+ 
         digishieldConsensus = consensus;
         digishieldConsensus.nHeightEffective = 1;
         //digishieldConsensus.fSimplifiedRewards = false;
-        //digishieldConsensus.fDigishieldDifficultyCalculation = true;
-        //digishieldConsensus.nPowTargetTimespan = 60; // post-digishield: 1 minute
-        //digishieldConsensus.nCoinbaseMaturity = 240;
+        digishieldConsensus.fDigishieldDifficultyCalculation = true;
+        digishieldConsensus.nPowTargetTimespan = 60; // post-digishield: 1 minute
+        digishieldConsensus.nCoinbaseMaturity = 90;
 
-        // Blocks 100+ are AuxPoW
+        // Blocks 25+ are AuxPoW
         auxpowConsensus = digishieldConsensus;
         auxpowConsensus.nHeightEffective = 25;
         auxpowConsensus.fAllowLegacyBlocks = false;
@@ -183,8 +183,7 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            (      2, uint256S("0x3900066862be3ee6182d0eab4462abc0ad7856c4617d8c90e6b1a789ac799ebd"))
-            (      3, uint256S("0xb55baf5fa21d06720443f4f42384ecf114405acc2841fa3d73599a8cac852511"))
+            (      0, uint256S("0xb8033aecb53a928c673df50bafb3571d7b4ed71fc097fa659ecb5b3857701d9b"))
         };
 
         chainTxData = ChainTxData{
